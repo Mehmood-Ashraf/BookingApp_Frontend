@@ -1,0 +1,362 @@
+.header {
+  background-color: #003580;
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 20px 0px 100px 0px;
+}
+
+.headerList {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.headerListItems {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerListItems.active {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.headerDesc {
+  margin: 20px 0px;
+}
+
+.headerBtn {
+  background-color: #0071c2;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.headerSearch {
+  height: 30px;
+  background-color: white;
+  border: 4px solid #febb02;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -25px;
+  /* left: 0; */
+  /* right: 0; */
+  /* margin: -25px auto 0 auto;; */
+  width: 100%;
+  max-width: 1024px;
+}
+
+.headerIcon {
+  color: lightgray;
+}
+
+.headerSearchItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.headerSearchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.headerSearchInput::placeholder {
+  color: rgb(192, 187, 187);
+  font-size: 16px;
+}
+
+.headerSearchText {
+  color: lightgray;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.date {
+  position: absolute;
+  top: 50px;
+  z-index: 2;
+}
+
+.options {
+  position: absolute;
+  z-index: 2;
+  top: 50px;
+  background-color: white;
+  color: gray;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
+  min-width: 250px;
+  padding: 15px;
+}
+
+.optionItem {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.optionText {
+  font-size: 16px;
+}
+
+.optionCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: black;
+}
+
+.optionCounterBtn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0071c2;
+  color: #0071c2;
+  cursor: pointer;
+  background-color: white;
+}
+
+.optionCounterBtn:disabled {
+  cursor: not-allowed;
+}
+
+.headerList {
+  transition: all 0.3s ease-in-out;
+}
+
+.headerContainer.listMode {
+  margin: 20px 0px 0px 0px;
+}
+
+@media (max-width: 1023px) {
+  .headerSearch {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    position: static;
+    margin-top: 20px;
+  }
+
+  .headerSearchItem {
+    flex: 1 1 45%;
+    min-width: 200px;
+    justify-content: flex-start;
+  }
+
+  .date,
+  .options {
+    position: relative;
+    top: unset;
+    left: unset;
+    right: unset;
+    margin-top: 10px;
+    width: 100%;
+    z-index: 5;
+  }
+}
+
+@media (max-width: 767px) {
+  .headerSearch {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 15px;
+    position: static;
+    margin-top: 20px;
+  }
+
+  .headerSearchItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .headerSearchInput {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .headerSearchText {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .headerIcon {
+    font-size: 18px;
+  }
+
+  .date,
+  .options {
+    /* padding: 10px; */
+    left: 0;
+  }
+
+  .optionItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .optionCounter {
+    gap: 10px;
+  }
+
+  .optionCounterButton {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+  }
+
+  .optionCounterNumber {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerSearch {
+    padding: 12px;
+    gap: 15px;
+  }
+
+  .headerSearchItem {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .headerSearchInput,
+  .headerSearchText {
+    font-size: 14px;
+  }
+
+  .headerBtn {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .optionCounterButton {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .date {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+
+  .rdrCalendarWrapper {
+    width: 100% !important;
+    font-size: 14px; /* Optional: slightly reduce text */
+  }
+
+  .rdrDateRangeWrapper {
+    flex-direction: column; /* Stack calendar if needed */
+  }
+
+  .rdrMonth {
+    width: 100% !important;
+  }
+
+  .rdrMonthAndYearWrapper {
+    justify-content: center;
+  }
+}
+
+.headerNavWrapper {
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  user-select: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .headerList {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #003580;
+    padding: 15px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 99;
+    top: 45px;
+    left: 0;
+    width: 100%;
+  }
+
+  .headerList.showNav {
+    display: flex;
+  }
+
+  .headerListItem {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .headerContainer {
+    padding: 0 15px;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .headerSearch {
+    position: relative; /* absolute hata do */
+    bottom: unset;
+    margin-top: 30px; /* thoda space upar se do */
+    width: calc(100% - 30px); /* left-right thoda space */
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .headerContainer {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px; /* left/right se thoda space dena zaroori hai */
+    box-sizing: border-box;
+  }
+}
