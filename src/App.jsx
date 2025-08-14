@@ -8,7 +8,6 @@ import Login from "./pages/login/Login";
 import { AuthContext } from "./context/AuthContext";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   // const ProtectedRoute = ({ children }) => {
   //   const { user } = useContext(AuthContext);

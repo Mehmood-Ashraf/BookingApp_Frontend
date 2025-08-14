@@ -40,7 +40,7 @@ const Hotel = () => {
 
   const days = dayDifference(dates[0]?.endDate, dates[0]?.startDate);
 
-  console.log(dates)
+  // console.log(data.photos[0])
 
   const handleOpen = (i) => {
     setSlideumber(i);
@@ -121,7 +121,7 @@ const Hotel = () => {
                   <div className="hotelImgWrapper" key={i}>
                     <img
                       onClick={() => handleOpen(i)}
-                      src={photo.src}
+                      src={photo && photo}
                       alt=""
                       className="hotelImg"
                     />
@@ -136,7 +136,7 @@ const Hotel = () => {
                 <div className="hotelDetailsPrice">
                   <h1>Perfect for a {days}-night stay!</h1>
                   <span>
-                    Located in the real heart of Krakow, this property has an
+                    Located in the real heart of {data.city}, this property has an
                     excellent location score of 9.8!
                   </span>
                   <h2>
